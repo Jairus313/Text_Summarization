@@ -2,6 +2,7 @@
 import nltk
 from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize, sent_tokenize 
 
 class Summariser():
 
@@ -22,11 +23,13 @@ class Summariser():
 
         return freqTable
 
-    def score_sentences(text_string, freqTable):
+    def sentence_tokenize(text_string):
         sentences = nltk.sent_tokenize(text_string)
-        sentenceValue = dict()
+        
+        return sentences
 
-        print(sentences)
+    def score_sentences(sentences, freqTable):
+        sentenceValue = dict()
 
         for sentence in sentences:
             word_count_in_sentence = (len(nltk.word_tokenize(sentence)))
@@ -37,9 +40,9 @@ class Summariser():
                     else:
                         sentenceValue[sentence[:10]] = freqTable[wordValue]
 
-            sentenceValue[sentence[:10]] = sentenceValue[sentence[:10]]
+            sentenceValue[sentence[:10]] = sentenceValue[sentence[:10]] // word_count_in_sentence
 
-            return sentenceValue
+        return sentenceValue
 
     def find_average_score(sentenceValue):
         sumValues = 0
