@@ -1,10 +1,20 @@
 # importing libraries
 import nltk
+import re
 from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize 
 
 class Summariser():
+
+    def clean_text(text):
+        text = re.sub(r'\[[0-9]*\]',' ',text)
+        text = re.sub(r'\s+',' ',text)
+        text = text.lower()
+        text = re.sub(r'\d',' ',text)
+        text = re.sub(r'\s+',' ',text)
+
+        return text
 
     def create_frequency_table(text_string):
         stopWords = set(stopwords.words("english"))

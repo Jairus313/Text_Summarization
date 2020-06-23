@@ -12,7 +12,7 @@ def home():
             return render_template("home.html")
 
         else:    
-            paragraph = text
+            paragraph = Summariser.clean_text(text)
             freq_table = Summariser.create_frequency_table(paragraph)
             sentence = Summariser.sentence_tokenize(paragraph)
             sentence_scores = Summariser.score_sentences(sentence, freq_table)
