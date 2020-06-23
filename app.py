@@ -8,14 +8,18 @@ def home():
     if request.method == "POST":
         text = request.form["text"]
 
-        paragraph = text
-        freq_table = Summariser.create_frequency_table(paragraph)
-        sentence = Summariser.sentence_tokenize(paragraph)
-        sentence_scores = Summariser.score_sentences(sentence, freq_table)
-        threshold = Summariser.find_average_score(sentence_scores)
-        summary = Summariser.generate_summary(sentence, sentence_scores, 0.75 * threshold)
-    
-        return render_template("result.html",text=summary)
+        if text == "":
+            return render_template("home.html")
+
+        else:    
+            paragraph = text
+            freq_table = Summariser.create_frequency_table(paragraph)
+            sentence = Summariser.sentence_tokenize(paragraph)
+            sentence_scores = Summariser.score_sentences(sentence, freq_table)
+            threshold = Summariser.find_average_score(sentence_scores)
+            summary = Summariser.generate_summary(sentence, sentence_scores, 0.75 * threshold)
+        
+            return render_template("result.html",text=summary)
     else:
         return render_template("home.html")
 
