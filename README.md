@@ -1,6 +1,12 @@
-# Text Summarization
+# NLP Text Summarizer 💻📝
 
-#### This is a Text Summarization app built with Flask(RESTapi) and deployed on Heroku(PaaS) using NLTK for summarizing text.
+#### This is a NLP project for Text Summarization which is built with Flask(RESTapi) and deployed on Heroku(PaaS) using NLTK for summarizing text. Here this app takes your huge paragraphs and gives out the only repeating sentences which are important for you.
 
 
-<img src="text_summarization.gif" height="300" widht="500">
+##### Try Out yourself and link for it:
+ https://jairus-textsummarizer.herokuapp.com/
+
+
+##### Some Glimpse of it😁!
+
+<img src="text_summarization.gif" height="400" widht="600">
