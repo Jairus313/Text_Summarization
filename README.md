@@ -7,8 +7,8 @@
 
 
 
-### Try Out yourself and link for it: 
-https://jairus-textsummarizer.herokuapp.com/
+#### Try Out yourself and link for it: 
+#### https://jairus-textsummarizer.herokuapp.com/
 
 
 ⚠Dont forget to give your feedback, after using it⚠.
@@ -17,3 +17,6 @@ https://jairus-textsummarizer.herokuapp.com/
 #### Some Glimpse of it😁!
 
 <img src="text_summarization.gif" height="400" widht="600">
+
+
+#### Don't Forget Star this Repo, If it helped you anyways.!
